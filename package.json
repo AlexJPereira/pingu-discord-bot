@@ -1,0 +1,31 @@
+{
+  "name": "pingu-discord-bot",
+  "version": "1.0.0",
+  "description": "quality of life bot",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wykke/pingu-discord-bot.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "pingu"
+  ],
+  "author": "wykke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wykke/pingu-discord-bot/issues"
+  },
+  "homepage": "https://github.com/wykke/pingu-discord-bot#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "discord.js": "^12.2.0"
+  }
+}
