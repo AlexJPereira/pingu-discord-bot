@@ -2,10 +2,10 @@
   "name": "pingu-discord-bot",
   "version": "1.0.0",
   "description": "quality of life bot",
-  "main": "./src/index.js",
+  "main": "./src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon"
+    "start": "ts-node-dev ./src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -23,9 +23,10 @@
   },
   "homepage": "https://github.com/wykke/pingu-discord-bot#readme",
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "ts-node-dev": "^1.0.0-pre.62"
   },
   "dependencies": {
-    "discord.js": "^12.2.0"
+    "discord.js": "^12.3.1",
+    "typescript": "^4.0.2"
   }
 }
