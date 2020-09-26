@@ -1,6 +1,9 @@
 import discord from 'discord.js'
-import config from '../database/config.json'
+import dotenv from 'dotenv'
 
+dotenv.config()
+
+const discordToken = process.env.DISCORD_TOKEN || ""
 const client = new discord.Client();
 
 client.once('ready', () => {
@@ -13,4 +16,4 @@ client.on('message', message => {
         message.channel.send("pong OwO")
 });
 
-client.login(config.discordToken);
+client.login(discordToken);
