@@ -1,7 +1,9 @@
 import discord from 'discord.js'
 import dotenv from 'dotenv'
+import CommandsList from './commands/api/commandsList'
 
 dotenv.config()
+const commandsList = new CommandsList()
 
 const discordToken = process.env.DISCORD_TOKEN || ""
 const client = new discord.Client();
@@ -12,8 +14,7 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
-    if(message.content == '!ping')
-        message.channel.send("pong OwO")
+    commandsList.run(message)
 });
 
 client.login(discordToken);
