@@ -9,6 +9,14 @@ export default abstract class DefaultCommand{
 
     async abstract run(): Promise<boolean>
 
+    send(message: string){
+        this.message.channel.send(message)
+    }
+
+    reply(message: string){
+        this.message.reply(message)
+    }
+
     get parameters(){
         const params = this.message.content.split(' ')
         params.shift()
