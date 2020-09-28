@@ -6,20 +6,24 @@ export default class Random extends DefaultCommand{
         return Math.round(Math.random() * (maxValue - minValue) ) + minValue;
     }
 
+    replyMessage(minValue: number, maxValue: number, randomNumber: number){
+        return `Random number between ${minValue} and ${maxValue}:${'\n'}${randomNumber} :confetti_ball:`
+    }
+
     async run(){
         let minValue = Number.parseInt(this.parameters[0])
         let maxValue = Number.parseInt(this.parameters[1])
-
-        if(minValue && maxValue){
-            const randomNumber = this.randomBetween(minValue, maxValue)
-            this.reply(`Random number between ${minValue} and ${maxValue}:${'\n'}${randomNumber} :confetti_ball:`)
-        }else if(minValue){
-            const randomNumber = this.randomBetween(0, minValue)
-            this.reply(`Random number between ${0} and ${minValue}:${'\n'}${randomNumber} :confetti_ball:`)
-        }else{
-            const randomNumber = this.randomBetween(0, 100)
-            this.reply(`Random number between ${0} and ${100}:${'\n'}${randomNumber} :confetti_ball:`)
+        
+        if(!minValue){
+            minValue = 0
+            maxValue = 100
+        } else if(!maxValue){
+            maxValue = minValue
+            minValue = 0
         }
+
+        const randomNumber = this.randomBetween(minValue, maxValue)
+        this.reply(this.replyMessage(minValue, maxValue, randomNumber))
         
         return true
     }
