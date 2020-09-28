@@ -5,4 +5,9 @@ export default class Ping extends DefaultCommand{
         this.reply("Pong OwO")
         return true
     }
+
+    help(){
+        this.reply("this function does not receive parameters, just try to say !ping")
+        return true
+    }
 }

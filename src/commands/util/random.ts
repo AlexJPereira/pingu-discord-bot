@@ -26,4 +26,13 @@ export default class Random extends DefaultCommand{
         
         return true
     }
+
+    help(){
+        this.reply(`this function receive one, two or no numeric parameters:
+        if there's two parameters, then the random number will be between then,
+        if there's one parameter, then the random number will be between 0 and this parameter,
+        if there's no parameter, then the random number will be between 0 and 100,
+        all the parameters must be numbers OwO`)
+        return true
+    }
 }

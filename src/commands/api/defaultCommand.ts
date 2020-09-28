@@ -9,6 +9,8 @@ export default abstract class DefaultCommand{
 
     async abstract run(): Promise<boolean>
 
+    abstract help(): boolean
+
     send(message: string){
         this.message.channel.send(message)
     }
