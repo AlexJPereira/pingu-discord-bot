@@ -13,7 +13,7 @@ export default class CommandsList{
     }
 
     async run(message: Message){
-        const command = message.content.split(' ').shift()
+        const command = message.content.split(' ').shift()?.toLowerCase()
         if(command && this.list.has(command)){
             await this.list.get(command)?.create(message).run()
         }
