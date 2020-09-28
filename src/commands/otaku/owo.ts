@@ -6,4 +6,9 @@ export default class Owo extends DefaultCommand{
         
         return true
     }
+
+    help(){
+        this.reply("this function does not receive parameters, just try to say !owo")
+        return true
+    }
 }
