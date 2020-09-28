@@ -1,4 +1,3 @@
-import { randomBytes } from 'crypto'
 import DefaultCommand from '../api/defaultCommand'
 
 export default class Random extends DefaultCommand{
